@@ -1,9 +1,26 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar color = "tertiary">
     <ion-title>
-      Tab Two
+        <div  class="ion-text-center" > 
+            <div style="width: 20%; float:left">
+                <img src="/assets/icon/ynb.png"  alt="" style="opacity:1;filter:alpha(opacity=100);width:100%;  margin-left: auto;
+        margin-right: auto;"/>
+             </div>
+             <div style="width: 80%; float:center; align-items: center;">
+                <br> Courses Grades
+             </div>
+        </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content></ion-content>
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item *ngFor="let item of items;let i = index">
+      <ion-label>
+        <h2>{{serviceservice.CrsHst.Course[i]}} Grade : {{serviceservice.CrsHst.Grade[i]}}</h2>
+        <h3>Course credit :{{serviceservice.CrsHst.Unit[i]}}    Term : {{serviceservice.CrsHst.Term[i]}}</h3>
+        <p>Course Full name : {{serviceservice.CrsHst.Descrp[i]}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

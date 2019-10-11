@@ -1,0 +1,35 @@
+<ion-content  color="favorite" class="ion-padding">
+    <ion-grid style="height: 100%">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+    <ion-card color="light"   >
+    <form (ngSubmit)='newfun()' >
+      <ion-grid class="shadow-red">
+        <ion-row color="shadow-red" div class="ion-padding">
+          <ion-col color="shadow-red" class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+            <div  class="ion-text-center" >
+                <img src="/assets/login.png"  alt="" style="opacity:0.4;filter:alpha(opacity=40);width:30%;  margin-left: auto;
+                margin-right: auto;" />
+              <h3>Login </h3>
+            </div>
+            <div class="ion-padding"> 
+   <ion-item>
+  <ion-label position="floating">Your ID</ion-label>
+    <ion-input clearInput type="number" name="username" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating"> Password</ion-label>
+    <ion-input clearInput type="password" name="password"  [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-button  shape="block" size="large"  type="submit">Submit</ion-button>
+  </div>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+    </form>
+  </ion-card>
+  <ion-avatar>
+      <img (click) ="about()" src="/assets/icon/dev.png">
+    </ion-avatar>
+  </ion-row>
+  </ion-grid>
+  </ion-content>

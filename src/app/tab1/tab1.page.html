@@ -1,41 +1,46 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar color = "tertiary">
     <ion-title>
-      Tab One
+        <div  class="ion-text-center" > 
+            <div style="width: 20%; float:left">
+                <img src="/assets/icon/ynb.png"  alt="" style="opacity:1;filter:alpha(opacity=100);width:100%;  margin-left: auto;
+        margin-right: auto;"/>
+             </div>
+             <div style="width: 80%; float:center; align-items: center;">
+                <br> Abssense Percentege
+             </div>
+        </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+<ion-content color="white">
+  <ion-card color="light" (click)="expandItem(item)" *ngFor="let item of items;let i = index">
+    <ion-card-header>
+      <ion-card-title>
+          <ion-row>
+              <ion-col>
+                  <div><ion-icon name="school"></ion-icon>{{" "+Head.SubNm[i]+" " +this.Head.CatNbr[i]}}</div>
+                </ion-col>
+                <ion-col>
+                  <div>{{this.Head.AbbPrs[i]}} %</div>
+                </ion-col>
+              </ion-row>
+           </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <app-expandable expandHeight="100px" [expanded]="item.expanded">
+        <p>
+           Course Name :  {{Head.CourseTitle[i]}} 
+        </p>
+        <p>
+            Abssense Percentege : {{this.Head.AbbPrs[i]}}
+        </p>
+        <p>
+            Abssense Classes : {{this.Head.AbbNum[i]}}
+        </p>
+      </app-expandable>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
